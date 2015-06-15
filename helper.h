@@ -12,6 +12,7 @@
 #include <unordered_set>
 #include <unordered_map>
 #include <climits>
+#include <algorithm>
 
 using namespace std;
 
@@ -47,6 +48,16 @@ void PrintDLL(DLLNode *root){
 		cur = cur->next;
 	}
 	cout<<"]"<<endl;
+}
+
+template<typename T> 
+void PrintVector(vector<T> arr){
+	cout<<"[";
+	auto iter = arr.begin();
+	for(; iter != prev(arr.end()); iter++){
+		cout<<*iter<<", ";
+	}
+	cout<<*iter<<"]"<<endl;
 }
 
 #endif //__HELPER_H__
