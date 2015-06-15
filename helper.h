@@ -11,6 +11,9 @@
 #include <map>
 #include <unordered_set>
 #include <unordered_map>
+#include <climits>
+
+using namespace std;
 
 struct BSTNode{
 	int val;
@@ -32,5 +35,18 @@ struct DLLNode{
 	DLLNode(int v):val(v), prev(NULL), next(NULL){}
 };
 
+
+void PrintDLL(DLLNode *root){
+	if(root == NULL){
+		cout<<"[]"<<endl;
+	}
+	DLLNode *cur = root;
+	cout<<"[";
+	while(cur != NULL){
+		cout<<cur->val<<" ";
+		cur = cur->next;
+	}
+	cout<<"]"<<endl;
+}
 
 #endif //__HELPER_H__
